@@ -16,18 +16,29 @@ export const FeedbackPopup: React.FC = () => {
       return;
     }
 
+    let scrollTimer: NodeJS.Timeout;
+    let hasUserEngaged = false;
+
     // Track scrolling
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setHasScrolled(true);
+      if (window.scrollY > 100 && !hasUserEngaged) {
+        hasUserEngaged = true;
+        // If user scrolls, show popup after 5 seconds
+        scrollTimer = setTimeout(() => {
+          if (!hasShown) {
+            setShowPopup(true);
+            setHasShown(true);
+            sessionStorage.setItem("feedbackPopupShown", "true");
+          }
+        }, 5000);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Set timer for 10 seconds
-    const timer = setTimeout(() => {
-      if (hasScrolled && !hasShown) {
+    // Fallback: Show after 10 seconds even without scrolling
+    const fallbackTimer = setTimeout(() => {
+      if (!hasShown) {
         setShowPopup(true);
         setHasShown(true);
         sessionStorage.setItem("feedbackPopupShown", "true");
@@ -36,9 +47,10 @@ export const FeedbackPopup: React.FC = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      clearTimeout(timer);
+      clearTimeout(scrollTimer);
+      clearTimeout(fallbackTimer);
     };
-  }, [hasScrolled, hasShown]);
+  }, [hasShown]);
 
   const handleClose = () => {
     setShowPopup(false);
