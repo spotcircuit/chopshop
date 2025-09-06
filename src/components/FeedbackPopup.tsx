@@ -25,14 +25,14 @@ export const FeedbackPopup: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Set timer for 20 seconds
+    // Set timer for 10 seconds
     const timer = setTimeout(() => {
       if (hasScrolled && !hasShown) {
         setShowPopup(true);
         setHasShown(true);
         sessionStorage.setItem("feedbackPopupShown", "true");
       }
-    }, 20000);
+    }, 10000);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
