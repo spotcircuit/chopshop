@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* Glassmorphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Aurora gradient backgrounds */
+.aurora-bg {
+  background: linear-gradient(45deg, #ec4899, #14b8a6, #f97316);
+  background-size: 200% 200%;
+  animation: aurora 15s ease infinite;
+}
+
+@keyframes aurora {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    rgb(var(--brand-primary)),
+    rgb(var(--brand-secondary)),
+    rgb(var(--brand-accent))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Fire gradient text */
+.gradient-text-fire {
+  background: linear-gradient(90deg, #f97316, #fb7185, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shadow effects */
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
+}
+
+/* Neon button */
+.btn-neon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgb(var(--brand-primary)),
+    rgb(var(--brand-secondary))
+  );
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-neon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.8);
+}
+
+/* Fire variant button: hotter gradient + strong glow */
+.btn-fire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(100deg, rgb(var(--brand-primary)) 0%, rgb(var(--brand-accent)) 50%, rgb(var(--brand-secondary)) 100%);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.55), 0 0 60px rgba(249, 115, 22, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.btn-fire::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 80% at 20% 0%, rgba(255,255,255,0.25), transparent 60%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.btn-fire:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(236, 72, 153, 0.65), 0 0 90px rgba(249, 115, 22, 0.45);
+  filter: brightness(1.05);
+}
+
+.btn-fire:active { transform: translateY(0); }
+
+/* Clean outline button for secondary CTA */
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.35);
+  background: transparent;
+  backdrop-filter: blur(6px);
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(5deg); }
+  75% { transform: translateY(10px) rotate(-5deg); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(10px) rotate(-5deg); }
+  75% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Layout utilities */
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.section-spacing {
+  margin: 6rem 0;
+}
