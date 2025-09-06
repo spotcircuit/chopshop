@@ -79,13 +79,13 @@ export const FeedbackPopup: React.FC = () => {
             }}
             exit={{ scale: 0.5, opacity: 0, rotate: 10 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-md w-full"
+            className="relative max-w-md w-full mx-4"
           >
             {/* Animated background gradient */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl blur-xl opacity-75 animate-pulse" />
+            <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl sm:rounded-3xl blur-xl opacity-75 animate-pulse" />
             
             {/* Main popup content */}
-            <div className="relative bg-gradient-to-br from-purple-900/95 via-pink-900/95 to-cyan-900/95 rounded-3xl p-8 shadow-2xl border border-white/20">
+            <div className="relative bg-gradient-to-br from-purple-900/95 via-pink-900/95 to-cyan-900/95 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/20">
               {/* Close button */}
               <button
                 onClick={handleClose}
@@ -95,24 +95,24 @@ export const FeedbackPopup: React.FC = () => {
               </button>
 
               {/* Floating emojis */}
-              <div className="absolute -top-6 -left-6 animate-bounce">
-                <PartyPopper className="w-12 h-12 text-yellow-400" />
+              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 animate-bounce">
+                <PartyPopper className="w-8 h-8 sm:w-12 sm:h-12 text-yellow-400" />
               </div>
-              <div className="absolute -top-6 -right-6 animate-bounce" style={{ animationDelay: "0.2s" }}>
-                <Star className="w-12 h-12 text-yellow-400 fill-yellow-400" />
+              <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 animate-bounce" style={{ animationDelay: "0.2s" }}>
+                <Star className="w-8 h-8 sm:w-12 sm:h-12 text-yellow-400 fill-yellow-400" />
               </div>
-              <div className="absolute -bottom-6 -left-6 animate-bounce" style={{ animationDelay: "0.4s" }}>
-                <Heart className="w-12 h-12 text-pink-400 fill-pink-400" />
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 animate-bounce" style={{ animationDelay: "0.4s" }}>
+                <Heart className="w-8 h-8 sm:w-12 sm:h-12 text-pink-400 fill-pink-400" />
               </div>
-              <div className="absolute -bottom-6 -right-6 animate-bounce" style={{ animationDelay: "0.6s" }}>
-                <Zap className="w-12 h-12 text-cyan-400 fill-cyan-400" />
+              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 animate-bounce" style={{ animationDelay: "0.6s" }}>
+                <Zap className="w-8 h-8 sm:w-12 sm:h-12 text-cyan-400 fill-cyan-400" />
               </div>
 
               {/* Content */}
               <div className="text-center">
                 {/* Animated title */}
                 <motion.h2 
-                  className="text-4xl font-black mb-4"
+                  className="text-2xl sm:text-4xl font-black mb-4"
                   animate={{ 
                     scale: [1, 1.05, 1],
                   }}
@@ -128,14 +128,14 @@ export const FeedbackPopup: React.FC = () => {
                 </motion.h2>
 
                 {/* Sparkles decoration */}
-                <div className="flex justify-center gap-2 mb-6">
-                  <Sparkles className="w-6 h-6 text-yellow-400 animate-pulse" />
-                  <Sparkles className="w-8 h-8 text-pink-400 animate-pulse" style={{ animationDelay: "0.2s" }} />
-                  <Sparkles className="w-6 h-6 text-cyan-400 animate-pulse" style={{ animationDelay: "0.4s" }} />
+                <div className="flex justify-center gap-2 mb-4 sm:mb-6">
+                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 animate-pulse" />
+                  <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-pink-400 animate-pulse" style={{ animationDelay: "0.2s" }} />
+                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 animate-pulse" style={{ animationDelay: "0.4s" }} />
                 </div>
 
                 {/* Message */}
-                <p className="text-white text-lg mb-2">
+                <p className="text-white text-base sm:text-lg mb-2">
                   Designed & Created with 💖 by
                 </p>
                 
@@ -149,7 +149,7 @@ export const FeedbackPopup: React.FC = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  <h3 className="text-5xl font-black mb-6">
+                  <h3 className="text-3xl sm:text-5xl font-black mb-4 sm:mb-6">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400">
                       SPOTCIRCUIT
                     </span>
@@ -157,33 +157,33 @@ export const FeedbackPopup: React.FC = () => {
                 </motion.div>
 
                 {/* Contact info */}
-                <div className="space-y-3 mb-6">
+                <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                   <a 
                     href="https://spotcircuit.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 transition-all"
+                    className="block text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 transition-all"
                   >
                     🌐 spotcircuit.com
                   </a>
                   <a 
                     href="mailto:brian@spotcircuit.com"
-                    className="block text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-300 hover:to-pink-300 transition-all"
+                    className="block text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-300 hover:to-pink-300 transition-all"
                   >
                     ✉️ brian@spotcircuit.com
                   </a>
                 </div>
 
                 {/* Fun CTA buttons */}
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleClose}
-                    className="flex-1 py-3 px-6 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
+                    className="flex-1 py-2.5 sm:py-3 px-4 sm:px-6 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all text-sm sm:text-base"
                   >
                     <span className="flex items-center justify-center gap-2">
-                      <Heart className="w-5 h-5" />
+                      <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
                       Love it!
                     </span>
                   </motion.button>
@@ -191,10 +191,10 @@ export const FeedbackPopup: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleClose}
-                    className="flex-1 py-3 px-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
+                    className="flex-1 py-2.5 sm:py-3 px-4 sm:px-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all text-sm sm:text-base"
                   >
                     <span className="flex items-center justify-center gap-2">
-                      <Star className="w-5 h-5" />
+                      <Star className="w-4 h-4 sm:w-5 sm:h-5" />
                       Amazing!
                     </span>
                   </motion.button>

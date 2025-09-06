@@ -96,7 +96,7 @@ const services = [
 
 export const ServicesGrid: React.FC = () => {
   return (
-    <section id="services" className="relative overflow-hidden py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-50 via-pink-50 to-teal-50">
+    <section id="services" className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-50 via-pink-50 to-teal-50">
       {/* Dynamic animated background */}
       <div className="absolute inset-0 -z-20">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-transparent to-brand-secondary/20" />
@@ -105,8 +105,8 @@ export const ServicesGrid: React.FC = () => {
       </div>
       
       {/* Vibrant gradient orbs */}
-      <div className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-pink-400/40 to-purple-400/40 blur-3xl animate-pulse" />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-teal-400/40 to-cyan-400/40 blur-3xl animate-pulse" />
+      <div className="pointer-events-none absolute -top-40 -left-40 w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] rounded-full bg-gradient-to-br from-pink-400/40 to-purple-400/40 blur-3xl animate-pulse" />
+      <div className="pointer-events-none absolute -bottom-40 -right-40 w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] rounded-full bg-gradient-to-tl from-teal-400/40 to-cyan-400/40 blur-3xl animate-pulse" />
       <div className="container-custom section-padding">
         {/* Section header */}
         <motion.div
@@ -117,7 +117,7 @@ export const ServicesGrid: React.FC = () => {
           className="text-center mb-8 md:mb-10"
         >
           <motion.div 
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold uppercase tracking-wider text-sm mb-8 shadow-lg shadow-purple-500/50"
+            className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold uppercase tracking-wider text-xs sm:text-sm mb-6 sm:mb-8 shadow-lg shadow-purple-500/50"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
@@ -126,7 +126,7 @@ export const ServicesGrid: React.FC = () => {
             <Star className="w-5 h-5 text-yellow-300 animate-pulse" />
           </motion.div>
 
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tight mb-6 leading-none">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black tracking-tight mb-4 sm:mb-6 leading-none px-4 sm:px-0">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600">Everything You Need For An</span>
             <motion.span 
               className="block relative mt-2"
@@ -134,14 +134,14 @@ export const ServicesGrid: React.FC = () => {
               transition={{ duration: 3, repeat: Infinity }}
             >
               <span className="absolute -inset-4 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 blur-2xl opacity-75 animate-pulse"></span>
-              <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-6xl md:text-7xl lg:text-8xl font-black animate-gradient-shimmer">
+              <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black animate-gradient-shimmer">
                 Unforgettable Party
               </span>
             </motion.span>
           </h2>
           
           <motion.div 
-            className="mx-auto w-80 h-3 rounded-full bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary mb-8 shadow-glow"
+            className="mx-auto w-60 sm:w-72 md:w-80 h-2 sm:h-3 rounded-full bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary mb-6 sm:mb-8 shadow-glow"
             animate={{ 
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
@@ -149,7 +149,7 @@ export const ServicesGrid: React.FC = () => {
             style={{ backgroundSize: "200% 100%" }}
           />
 
-          <p className="text-xl md:text-2xl font-bold max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-700 to-teal-700">
               From setup to cleanup, we handle every detail so you can focus on
             </span>
@@ -187,15 +187,15 @@ export const ServicesGrid: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-12 px-4 sm:px-0"
         >
-          <p className="text-2xl font-bold mb-8">
+          <p className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600">
               Want something totally custom?
             </span>
           </p>
           <motion.button 
-            className="px-12 py-6 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-bold text-xl rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 uppercase tracking-wider hover:from-purple-600 hover:via-pink-600 hover:to-cyan-600"
+            className="px-8 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-bold text-lg sm:text-xl rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 uppercase tracking-wider hover:from-purple-600 hover:via-pink-600 hover:to-cyan-600"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

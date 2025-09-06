@@ -74,7 +74,7 @@ export const PackageTiers: React.FC = () => {
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
 
   return (
-    <section id="packages" className="relative overflow-hidden py-16 md:py-20 lg:py-24 bg-gradient-to-br from-orange-50 via-yellow-50 to-pink-50">
+    <section id="packages" className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-orange-50 via-yellow-50 to-pink-50">
       {/* Dynamic animated background */}
       <div className="absolute inset-0 -z-20">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-200/30 via-transparent to-pink-200/30" />
@@ -83,8 +83,8 @@ export const PackageTiers: React.FC = () => {
       </div>
       
       {/* Vibrant gradient orbs */}
-      <div className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-orange-400/40 to-yellow-400/40 blur-3xl animate-pulse" />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-pink-400/40 to-purple-400/40 blur-3xl animate-pulse" />
+      <div className="pointer-events-none absolute -top-40 -left-40 w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] rounded-full bg-gradient-to-br from-orange-400/40 to-yellow-400/40 blur-3xl animate-pulse" />
+      <div className="pointer-events-none absolute -bottom-40 -right-40 w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] rounded-full bg-gradient-to-tl from-pink-400/40 to-purple-400/40 blur-3xl animate-pulse" />
       
       <div className="container-custom section-padding relative z-10">
         {/* Section header */}
@@ -96,7 +96,7 @@ export const PackageTiers: React.FC = () => {
           className="text-center mb-12"
         >
           <motion.div 
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold uppercase tracking-wider text-sm mb-8 shadow-lg shadow-orange-500/50"
+            className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold uppercase tracking-wider text-xs sm:text-sm mb-6 sm:mb-8 shadow-lg shadow-orange-500/50"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
@@ -105,7 +105,7 @@ export const PackageTiers: React.FC = () => {
             <Flame className="w-5 h-5 text-yellow-300 animate-pulse" />
           </motion.div>
 
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tight mb-6 leading-none">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tight mb-4 sm:mb-6 leading-none">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-orange-600">Turn Up</span>
             <motion.span 
               className="block relative mt-2"
@@ -113,14 +113,14 @@ export const PackageTiers: React.FC = () => {
               transition={{ duration: 3, repeat: Infinity }}
             >
               <span className="absolute -inset-4 bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 blur-2xl opacity-75 animate-pulse"></span>
-              <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-6xl md:text-7xl lg:text-8xl animate-gradient-shimmer">
+              <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl animate-gradient-shimmer">
                 THE WEEKEND
               </span>
             </motion.span>
           </h2>
           
           <motion.div 
-            className="mx-auto w-80 h-3 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 mb-8 shadow-glow"
+            className="mx-auto w-60 sm:w-72 md:w-80 h-2 sm:h-3 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 mb-6 sm:mb-8 shadow-glow"
             animate={{ 
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
@@ -128,18 +128,18 @@ export const PackageTiers: React.FC = () => {
             style={{ backgroundSize: "200% 100%" }}
           />
 
-          <p className="text-xl md:text-2xl font-bold max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold max-w-3xl mx-auto leading-relaxed px-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-pink-700 to-purple-700">Three levels of</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500 font-black mx-2">pure luxury</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-700 to-orange-700">— from</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500 font-black mx-2">chill vibes</span> 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-pink-700 to-purple-700">to</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 font-black mx-2 text-2xl md:text-3xl">FULL SEND</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 font-black mx-2 text-xl sm:text-2xl md:text-3xl">FULL SEND</span>
           </p>
         </motion.div>
 
         {/* Package cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 px-4 sm:px-0">
           {packages.map((pkg, index) => {
             const isHot = pkg.id === "hot";
             const isMild = pkg.id === "mild";
@@ -169,7 +169,7 @@ export const PackageTiers: React.FC = () => {
                 isMild && "bg-gradient-to-br from-cyan-400 via-teal-400 to-green-400"
               )}>
                 <div className={cn(
-                  "bg-gradient-to-br rounded-2xl h-full flex flex-col min-h-[600px] cursor-pointer transition-all duration-300 group",
+                  "bg-gradient-to-br rounded-2xl h-full flex flex-col min-h-[500px] sm:min-h-[600px] cursor-pointer transition-all duration-300 group",
                   isHot && "from-orange-900/95 via-pink-900/95 to-purple-900/95",
                   isMedium && "from-purple-900/95 via-pink-900/95 to-cyan-900/95",
                   isMild && "from-cyan-900/95 via-teal-900/95 to-green-900/95",
@@ -188,9 +188,9 @@ export const PackageTiers: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/80" />
                     </div>
                   )}
-                  <div className="relative z-10 p-8 flex flex-col h-full">
+                  <div className="relative z-10 p-6 sm:p-8 flex flex-col h-full">
                     {/* Header section with icon and title */}
-                    <div className="text-center mb-6">
+                    <div className="text-center mb-4 sm:mb-6">
                       <div className={cn(
                         "inline-flex p-4 rounded-full mb-4",
                         isHot && "bg-gradient-to-br from-orange-500/30 to-pink-500/30 border-2 border-orange-400",
@@ -205,7 +205,7 @@ export const PackageTiers: React.FC = () => {
                       </div>
                       
                       <h3 className={cn(
-                        "text-4xl font-display font-black mb-2",
+                        "text-3xl sm:text-4xl font-display font-black mb-2",
                         isHot && "text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-pink-300 to-yellow-300",
                         isMedium && "text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-cyan-300",
                         isMild && "text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-teal-300 to-green-300"
@@ -219,9 +219,9 @@ export const PackageTiers: React.FC = () => {
                       
                       <div className={cn(
                         "font-black",
-                        isHot && "text-6xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 drop-shadow-[0_0_20px_rgba(251,191,36,0.5)]",
-                        isMedium && "text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 drop-shadow-[0_0_20px_rgba(168,85,247,0.5)]",
-                        isMild && "text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-green-400 drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+                        isHot && "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 drop-shadow-[0_0_20px_rgba(251,191,36,0.5)]",
+                        isMedium && "text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 drop-shadow-[0_0_20px_rgba(168,85,247,0.5)]",
+                        isMild && "text-3xl sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-green-400 drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]"
                       )}>
                         {pkg.price}
                       </div>
@@ -229,7 +229,7 @@ export const PackageTiers: React.FC = () => {
                     </div>
 
                     {/* Features list - grows to fill space */}
-                    <div className="flex-grow space-y-3 mb-8">
+                    <div className="flex-grow space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                       {pkg.features.map((feature, i) => (
                         <div key={i} className="flex items-start gap-3">
                           <Check className={cn(
@@ -246,7 +246,7 @@ export const PackageTiers: React.FC = () => {
                     {/* Button - always at bottom */}
                     <button
                       className={cn(
-                        "w-full py-4 px-6 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105",
+                        "w-full py-3 sm:py-4 px-4 sm:px-6 rounded-full font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105",
                         isHot && "bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-500 text-white shadow-lg shadow-orange-500/50 hover:shadow-xl hover:shadow-orange-500/60",
                         isMedium && "bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-500/60",
                         isMild && "bg-gradient-to-r from-cyan-500 via-teal-500 to-green-500 text-white shadow-lg shadow-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/60"
@@ -273,18 +273,18 @@ export const PackageTiers: React.FC = () => {
           className="text-center"
         >
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600">
                 Need Something Custom?
               </span>
             </h3>
-            <p className="text-xl font-bold mb-8">
+            <p className="text-lg sm:text-xl font-bold mb-6 sm:mb-8 px-4 sm:px-0">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-700 to-orange-700">
                 Let&apos;s create a package that&apos;s uniquely yours
               </span>
             </p>
             <motion.button 
-              className="px-12 py-6 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-white font-bold text-xl rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 uppercase tracking-wider hover:from-orange-600 hover:via-pink-600 hover:to-purple-600"
+              className="px-8 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-white font-bold text-lg sm:text-xl rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 uppercase tracking-wider hover:from-orange-600 hover:via-pink-600 hover:to-purple-600"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
