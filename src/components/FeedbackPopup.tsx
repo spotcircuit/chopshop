@@ -6,8 +6,6 @@ import { X, Sparkles, Heart, Star, Zap, PartyPopper } from "lucide-react";
 
 export const FeedbackPopup: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
-  const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
     // Check if popup was already shown this session
@@ -18,16 +16,17 @@ export const FeedbackPopup: React.FC = () => {
 
     let scrollTimer: NodeJS.Timeout;
     let hasUserEngaged = false;
+    let hasBeenShown = false;
 
     // Track scrolling
     const handleScroll = () => {
-      if (window.scrollY > 100 && !hasUserEngaged) {
+      if (window.scrollY > 100 && !hasUserEngaged && !hasBeenShown) {
         hasUserEngaged = true;
         // If user scrolls, show popup after 5 seconds
         scrollTimer = setTimeout(() => {
-          if (!hasShown) {
+          if (!hasBeenShown) {
+            hasBeenShown = true;
             setShowPopup(true);
-            setHasShown(true);
             sessionStorage.setItem("feedbackPopupShown", "true");
           }
         }, 5000);
@@ -38,9 +37,9 @@ export const FeedbackPopup: React.FC = () => {
 
     // Fallback: Show after 10 seconds even without scrolling
     const fallbackTimer = setTimeout(() => {
-      if (!hasShown) {
+      if (!hasBeenShown) {
+        hasBeenShown = true;
         setShowPopup(true);
-        setHasShown(true);
         sessionStorage.setItem("feedbackPopupShown", "true");
       }
     }, 10000);
@@ -50,7 +49,7 @@ export const FeedbackPopup: React.FC = () => {
       clearTimeout(scrollTimer);
       clearTimeout(fallbackTimer);
     };
-  }, [hasShown]);
+  }, []);
 
   const handleClose = () => {
     setShowPopup(false);
